@@ -1,27 +1,31 @@
 module.exports = (sequelize, Sequelize) => {
-    const Ticket = sequelize.define("ticket", {
-        id: {
-            type: Sequelize.INTEGER,
-            autoIncrement: true,
-            allowNull: false,
-            primaryKey: true,
-        },
-        title: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        description: {
-            type: Sequelize.STRING,
-            allowNull: false,
-        },
-        category_id: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-        },
-        user_id: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-        },
-    });
-    return Ticket;
+  const Ticket = sequelize.define("ticket", {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true,
+    },
+    title: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    category_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
+    user_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
+    tecnic_id: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
+  });
+  return Ticket;
 };
