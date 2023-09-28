@@ -22,7 +22,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
-    tecnic_id: {
+    technician_id: {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
