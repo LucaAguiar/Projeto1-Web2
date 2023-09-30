@@ -23,11 +23,22 @@ const route = express.Router();
     } else res.redirect("/");
 });*/
 
+// User:
 route.get("/", userController.getLogin);
 route.post("/login", userController.postLogin);
 route.get("/logout", userController.getLogout);
-route.post("/ticket/insert", ticketController.postCreate);
 route.post("/user/insert", userController.postCreate);
+route.delete("/user/delete", userController.delete);
+route.get("/user/get-all", userController.getAll);
+
+// Ticket
+route.post("/ticket/insert", ticketController.postCreate);
+route.get("/ticket/get-all", ticketController.getAll);
+route.delete("/ticket/delete", ticketController.delete);
+
+// Category
 route.post("/category/insert", categoryController.postCreate);
+route.get("/category/get-all", categoryController.getAll);
+route.delete("/category/delete", categoryController.delete);
 
 module.exports = route;

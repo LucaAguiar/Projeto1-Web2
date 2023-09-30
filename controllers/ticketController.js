@@ -18,4 +18,16 @@ module.exports = {
         res.status(500).json(err);
       });
   },
+
+  async getAll(req, res) {
+    const l = await db.Ticket.findAll();
+    res.status(200).json(l);
+  },
+
+  async delete(req, res) {
+    const { id } = req.body;
+    db.Ticket.destroy({ where: { id: id } })
+      .then((e) => res.status(200).json({}))
+      .catch((err) => res.status(500).json(err));
+  },
 };

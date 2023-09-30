@@ -37,4 +37,16 @@ module.exports = {
         console.log(err);
       });
   },
+
+  async getAll(req, res) {
+    const l = await db.User.findAll();
+    res.status(200).json(l);
+  },
+
+  async delete(req, res) {
+    const { id } = req.body;
+    db.User.destroy({ where: { id: id } })
+      .then((e) => res.status(200).json({ id }))
+      .catch((err) => res.status(500).json(err));
+  },
 };
