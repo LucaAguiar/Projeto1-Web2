@@ -1,52 +1,88 @@
+const { error } = require("console");
 const db = require("../config");
 const path = require("path");
 
 module.exports = {
-  async getLogin(req, res) {
-    res.render("userViews/loginView", { layout: "noMenu.handlebars" });
-  },
-  async getLogout(req, res) {
-    req.session.destroy();
-    res.redirect("/");
-  },
-  async postLogin(req, res) {
-    var user = {
-      login: req.body.login,
-    };
-    db.User.findAll({
-      where: { login: req.body.login, password: req.body.password },
-    })
-      .then((users) => {
-        if (users.length > 0) {
-          req.session.login = req.body.login;
-          res.render("home");
-        } else res.redirect("/");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
+    async getLogin(req, res) {
+        res.render("userViews/loginView", { layout: "noMenu.handlebars" });
+    },
+    async getLogout(req, res) {
+        req.session.destroy();
+        res.redirect("/");
+    },
+    async postLogin(req, res) {
+        db.User.findAll({
+            where: { login: req.body.login, password: req.body.password },
+        })
+            .then((users) => {
+                if (users.length > 0) {
+                    req.session.login = req.body.login;
+                    res.render("userViews/homeView");
+                } else res.redirect("/");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    },
 
-  async postCreate(req, res) {
-    const { login, password, name, type } = req.body;
-    db.User.create({ login, password, name, type })
-      .then((e) => {
-        res.status(200).json(e);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
+    async postCreate(req, res) {
+        const { login, password, name, type } = req.body;
+        db.User.create({ login, password, name, type })
+            .then((e) => {
+                res.status(200).json(e);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    },
 
-  async getAll(req, res) {
-    const l = await db.User.findAll();
-    res.status(200).json(l);
-  },
+    async getAll(req, res) {
+        db.User.findAll()
+            .then((users) => {
+                res.render("userViews/usersListView", {
+                    users: users.map((user) => user.toJSON()),
+                });
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    },
 
-  async delete(req, res) {
-    const { id } = req.body;
-    db.User.destroy({ where: { id: id } })
-      .then((e) => res.status(200).json({ id }))
-      .catch((err) => res.status(500).json(err));
-  },
+    async getUserCreate(req, res) {
+        res.render("userViews/userCreateView");
+    },
+
+    async postUserCreate(req, res) {
+        db.User.create(req.body)
+            .then(() => {
+                res.render("userViews/homeView");
+            })
+            .catch((error) => console.log(error));
+    },
+
+    async getUserUpdate(req, res) {
+        await db.User.findByPk(req.params.id)
+            .then((user) =>
+                res.render("userViews/userUpdateView", {
+                    user: user.dataValues,
+                })
+            )
+            .catch(function (err) {
+                console.log(err);
+            });
+    },
+
+    async postUserUpdate(req, res) {
+        await db.User.update(req.body, { where: { id: req.body.id } })
+            .then(res.render("userViews/homeView"))
+            .catch(function (err) {
+                console.log(err);
+            });
+    },
+
+    async getUserDelete(req, res) {
+        db.User.destroy({ where: { id: req.params.id } })
+            .then((e) => res.render("userViews/homeView"))
+            .catch((err) => res.status(500).json(err));
+    },
 };

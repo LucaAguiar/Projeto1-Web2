@@ -12,12 +12,16 @@ db.Ticket = require("../models/ticket.js")(sequelize, Sequelize);
 db.Category = require("../models/category.js")(sequelize, Sequelize);
 
 db.Category.hasMany(db.Ticket, {
-  foreignKey: "category_id",
-  onDelete: "NO ACTION",
+    foreignKey: "category_id",
+    onDelete: "NO ACTION",
 });
 db.User.hasMany(db.Ticket, {
-  foreignKey: "user_id",
-  onDelete: "NO ACTION",
+    foreignKey: "user_id",
+    onDelete: "NO ACTION",
+});
+db.User.hasMany(db.Ticket, {
+    foreignKey: "technician_id",
+    onDelete: "NO ACTION",
 });
 
 module.exports = db;

@@ -1,0 +1,44 @@
+<form action="/userUpdate" method="post">
+    <input type="hidden" name="id" value={{user.id}} />
+    <div class="form-group">
+        <label for="loginInput">Login</label>
+        <input
+            type="text"
+            class="form-control"
+            id="loginInput"
+            name="login"
+            value="{{user.login}}"
+        />
+    </div>
+    <div class="form-group">
+        <label for="passwordIput">Senha</label>
+        <input
+            type="password"
+            class="form-control"
+            id="passwordIput"
+            name="password"
+            value="{{user.password}}"
+        />
+    </div>
+    <div class="form-group">
+        <label for="nameInput">Nome</label>
+        <input
+            type="text"
+            class="form-control"
+            id="nameInput"
+            name="name"
+            value="{{user.name}}"
+        />
+    </div>
+    <div class="form-group">
+        <label for="typeInput">Tipo</label>
+        <input
+            type="text"
+            class="form-control"
+            id="typeInput"
+            name="type"
+            value="{{user.type}}"
+        />
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>

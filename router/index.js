@@ -27,9 +27,12 @@ const route = express.Router();
 route.get("/", userController.getLogin);
 route.post("/login", userController.postLogin);
 route.get("/logout", userController.getLogout);
-route.post("/user/insert", userController.postCreate);
-route.delete("/user/delete", userController.delete);
-route.get("/user/get-all", userController.getAll);
+route.get("/getUsers", userController.getAll);
+route.get("/userCreate", userController.getUserCreate);
+route.post("/userCreate", userController.postUserCreate);
+route.get("/userUpdate/:id", userController.getUserUpdate);
+route.post("/userUpdate", userController.postUserUpdate);
+route.get("/userDelete/:id", userController.getUserDelete);
 
 // Ticket
 route.post("/ticket/insert", ticketController.postCreate);
