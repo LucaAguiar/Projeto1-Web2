@@ -1,6 +1,16 @@
 const db = require("../config");
 
 module.exports = {
+    async getAll(req, res) {
+        db.Category.findAll()
+            .then((categories) => {
+                res.render("categoryViews/categoryListView", {
+                    categories: categories.map((category) => category.toJSON()),
+                });
+            })
+            .catch((error) => console.log(error));
+    },
+
     async getCategoryCreate(req, res) {
         res.render("categoryViews/categoryCreateView");
     },
@@ -15,20 +25,27 @@ module.exports = {
             });
     },
 
-    async getAll(req, res) {
-        db.Category.findAll()
-            .then((categories) => {
-                res.render("categoryViews/categoryListView", {
-                    categories: categories.map((category) => category.toJSON()),
+    async getCategoryUpdate(req, res) {
+        await db.Category.findByPk(req.params.id)
+            .then((category) => {
+                res.render("categoryViews/categoryUpdateView", {
+                    category: category.dataValues,
                 });
             })
             .catch((error) => console.log(error));
     },
 
-    async delete(req, res) {
-        const { id } = req.body;
-        db.Category.destroy({ where: { id: id } })
-            .then((e) => res.status(200).json({}))
+    async postCategoryUpdate(req, res) {
+        await db.Category.update(req.body, { where: { id: req.body.id } })
+            .then(res.render("userViews/homeView"))
+            .catch(function (err) {
+                console.log(err);
+            });
+    },
+
+    async getCategoryDelete(req, res) {
+        db.Category.destroy({ where: { id: req.params.id } })
+            .then((e) => res.render("userViews/homeView"))
             .catch((err) => res.status(500).json(err));
     },
 };

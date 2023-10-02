@@ -1,0 +1,21 @@
+<form
+    action="/categoryUpdate"
+    style="display: flex; flex-direction: column; max-width: 350px"
+    method="POST"
+>
+    <div class="form-group">
+        <input type="hidden" name="id" value={{category.id}} />
+        <label
+            for="nameInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Nome: </label>
+        <input
+            type="text"
+            class="form-control"
+            id="nameInput"
+            name="name"
+            value={{category.name}}
+        />
+    </div>
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>

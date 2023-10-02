@@ -1,7 +1,14 @@
-<form action="/userUpdate" method="post">
+<form
+    action="/userUpdate"
+    method="POST"
+    style="display: flex; flex-direction: column; max-width: 350px"
+>
     <input type="hidden" name="id" value={{user.id}} />
     <div class="form-group">
-        <label for="loginInput">Login</label>
+        <label
+            for="loginInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Login:</label>
         <input
             type="text"
             class="form-control"
@@ -11,7 +18,10 @@
         />
     </div>
     <div class="form-group">
-        <label for="passwordIput">Senha</label>
+        <label
+            for="passwordIput"
+            style="display: flex; width: 100%; align-items:start"
+        >Senha:</label>
         <input
             type="password"
             class="form-control"
@@ -21,7 +31,10 @@
         />
     </div>
     <div class="form-group">
-        <label for="nameInput">Nome</label>
+        <label
+            for="nameInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Nome:</label>
         <input
             type="text"
             class="form-control"
@@ -31,7 +44,10 @@
         />
     </div>
     <div class="form-group">
-        <label for="typeInput">Tipo</label>
+        <label
+            for="typeInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Tipo:</label>
         <input
             type="text"
             class="form-control"

@@ -43,6 +43,8 @@ route.delete("/ticket/delete", ticketController.delete);
 route.get("/categoryCreate", categoryController.getCategoryCreate);
 route.post("/categoryCreate", categoryController.postCategoryCreate);
 route.get("/categoryList", categoryController.getAll);
-route.delete("/category/delete", categoryController.delete);
+route.get("/categoryUpdate/:id", categoryController.getCategoryUpdate);
+route.post("/categoryUpdate", categoryController.postCategoryUpdate);
+route.get("/categoryDelete/:id", categoryController.getCategoryDelete);
 
 module.exports = route;
