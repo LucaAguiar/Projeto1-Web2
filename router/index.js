@@ -38,6 +38,7 @@ route.get("/userDelete/:id", userController.getUserDelete);
 route.post("/ticket/insert", ticketController.postCreate);
 route.get("/ticket/get-all", ticketController.getAll);
 route.delete("/ticket/delete", ticketController.delete);
+route.get("/ticketCreate", ticketController.getTicketCreate);
 
 // Category
 route.get("/categoryCreate", categoryController.getCategoryCreate);

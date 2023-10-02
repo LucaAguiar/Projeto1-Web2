@@ -1,46 +1,50 @@
 <html>
 
-    <head>
-        <title>Sistema de Controle de Tickets</title>
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        />
-        <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
-        ></script>
-        <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        ></script>
-    </head>
+  <head>
+    <title>Sistema de Controle de Tickets</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    ></script>
+  </head>
 
-    <body>
-        <center>
+  <body>
+    <center>
 
-            <h1> Sistema de Controle de Tickets </h1>
+      <h1> Sistema de Controle de Tickets </h1>
 
-            <a href="/getUsers">
-                <button class="btn btn-info"> Listar usuários</button>
-            </a>
+      <a href="/ticketCreate">
+        <button class="btn btn-info">Cadastrar ticket</button>
+      </a>
 
-            <a href="/categoryCreate">
-                <button class="btn btn-info"> Cadastrar Categorias</button>
-            </a>
+      <a href="/getUsers">
+        <button class="btn btn-info"> Listar usuários</button>
+      </a>
 
-            <a href="/categoryList">
-                <button class="btn btn-info"> Listar Categorias</button>
-            </a>
+      <a href="/categoryCreate">
+        <button class="btn btn-info"> Cadastrar Categorias</button>
+      </a>
 
-            <a href="/logout">
-                <button class="btn btn-info"> Logout</button>
-            </a>
-            <br />
-            <br />
-            {{{body}}}
-        </center>
-    </body>
+      <a href="/categoryList">
+        <button class="btn btn-info"> Listar Categorias</button>
+      </a>
+
+      <a href="/logout">
+        <button class="btn btn-info"> Logout</button>
+      </a>
+      <br />
+      <br />
+      {{{body}}}
+    </center>
+  </body>
 
 </html>
