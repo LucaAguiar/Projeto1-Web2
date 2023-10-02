@@ -25,17 +25,6 @@ module.exports = {
             });
     },
 
-    async postCreate(req, res) {
-        const { login, password, name, type } = req.body;
-        db.User.create({ login, password, name, type })
-            .then((e) => {
-                res.status(200).json(e);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    },
-
     async getAll(req, res) {
         db.User.findAll()
             .then((users) => {
@@ -49,7 +38,7 @@ module.exports = {
     },
 
     async getUserCreate(req, res) {
-        res.render("userViews/userCreateView");
+        res.render("userViews/userCreateView", { layout: "noMenu.handlebars" });
     },
 
     async postUserCreate(req, res) {

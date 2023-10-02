@@ -14,6 +14,12 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false,
         },
+        status: {
+            type: Sequelize.STRING,
+        },
+        observation: {
+            type: Sequelize.STRING,
+        },
         category_id: {
             type: Sequelize.INTEGER,
             allowNull: false,

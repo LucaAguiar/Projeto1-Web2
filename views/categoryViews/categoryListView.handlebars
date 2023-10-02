@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Deletar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each categories}}
+            <tr>
+                <th scope="row">{{name}}</th>
+                <td><a href="categoriaUpdate/{{id}}">Editar</a></td>
+                <td><a href="categoriaDelete/{{id}}">Deletar</a></td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

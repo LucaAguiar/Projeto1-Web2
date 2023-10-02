@@ -1,14 +1,27 @@
-<form action="/userCreate" method="post">
+<form
+    action="/userCreate"
+    method="POST"
+    style="display: flex; flex-direction: column; max-width: 350px"
+>
     <div class="form-group">
-        <label for="loginInput">Login</label>
+        <label
+            for="loginInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Login:</label>
         <input type="text" class="form-control" id="loginInput" name="login" />
     </div>
     <div class="form-group">
-        <label for="nameInput">Nome</label>
+        <label
+            for="nameInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Nome:</label>
         <input type="text" class="form-control" id="nameInput" name="name" />
     </div>
     <div class="form-group">
-        <label for="passwordInput">Senha</label>
+        <label
+            for="passwordInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Senha:</label>
         <input
             type="password"
             class="form-control"
@@ -17,7 +30,10 @@
         />
     </div>
     <div class="form-group">
-        <label for="typeInput">Tipo</label>
+        <label
+            for="typeInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Tipo:</label>
         <input type="text" class="form-control" id="typeInput" name="type" />
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>
