@@ -1,0 +1,37 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Status</th>
+            <th scope="col">Observação</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Apagar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each tickets}}
+            <tr>
+                <th scope="row">{{title}}</th>
+                <td>{{description}}</td>
+                <td>{{status}}</td>
+                <td>{{observation}}</td>
+                <td>
+                    <a
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                        href="ticketUpdate/{{id}}"
+                    >
+                        Editar
+                    </a>
+                </td>
+                <td>
+                    <a
+                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                        href="ticketDelete/{{id}}"
+                    >Deletar
+                    </a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

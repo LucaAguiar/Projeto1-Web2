@@ -1,0 +1,35 @@
+<form
+    action="/ticketUpdate"
+    method="POST"
+    style="display: flex; flex-direction: column; max-width: 350px"
+>
+
+    <input type="hidden" name="id" value={{ticket.id}} />
+
+    <div class="form-group">
+        <label
+            for="observationInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Observação:</label>
+        <input
+            type="text"
+            class="form-control"
+            id="observationInput"
+            name="observation"
+            value="{{ticket.observation}}"
+        />
+    </div>
+    <div class="form-group">
+        <label
+            for="categoryInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Status:</label>
+        <select class="form-select" value="{{ticket.status}}">
+            <option>Não resolvido</option>
+            <option>Capturado</option>
+            <option>Concluído</option>
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+</form>

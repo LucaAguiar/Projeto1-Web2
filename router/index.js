@@ -35,15 +35,15 @@ route.post("/userUpdate", userController.postUserUpdate);
 route.get("/userDelete/:id", userController.getUserDelete);
 
 // Ticket
-route.post("/ticket/insert", ticketController.postCreate);
-route.get("/ticket/get-all", ticketController.getAll);
-route.delete("/ticket/delete", ticketController.delete);
 route.get("/ticketCreate", ticketController.getTicketCreate);
+route.post("/ticketCreate", ticketController.postTicketCreate);
+route.get("/getTickets", ticketController.getAll);
+route.delete("/ticket/delete", ticketController.delete);
 
 // Category
 route.get("/categoryCreate", categoryController.getCategoryCreate);
 route.post("/categoryCreate", categoryController.postCategoryCreate);
-route.get("/categoryList", categoryController.getAll);
+route.get("/getCategories", categoryController.getAll);
 route.get("/categoryUpdate/:id", categoryController.getCategoryUpdate);
 route.post("/categoryUpdate", categoryController.postCategoryUpdate);
 route.get("/categoryDelete/:id", categoryController.getCategoryDelete);

@@ -7,7 +7,7 @@
         for="login"
         style="display: flex; width: 100%; align-items:start"
     >Login:</label>
-    <input type="text" name="login" id="login" />
+    <input class="form-control" type="text" name="login" id="login" />
     <br />
     <label
         for="password"
@@ -16,12 +16,16 @@
     <div
         style="display: flex; flex-direction:column; justify-content: flex-start"
     >
-        <input type="password" name="password" />
-        <a href="/userCreate" style="font-size: 12px; text-align: start">
+        <input class="form-control" type="password" name="password" />
+        <a
+            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+            href="/userCreate"
+            style="font-size: 12px; text-align: start"
+        >
             Cadastre-se
         </a>
     </div>
 
     <br />
-    <input type="submit" value="Logar" />
+    <button type="submit" class="btn btn-primary">Logar</button>
 </form>

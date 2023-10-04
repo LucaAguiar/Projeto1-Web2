@@ -1,50 +1,38 @@
 <form
-  action="/ticket/insert"
-  method="POST"
-  style="display: flex; flex-direction: column; max-width: 350px"
+    action="/ticketCreate"
+    method="POST"
+    style="display: flex; flex-direction: column; max-width: 350px"
 >
-  <div class="form-group">
-    <label
-      for="titleInput"
-      style="display: flex; width: 100%; align-items:start"
-    >Titulo:</label>
-    <input type="text" class="form-control" id="titleInput" name="title" />
-  </div>
-  <div class="form-group">
-    <label
-      for="desciptionInput"
-      style="display: flex; width: 100%; align-items:start"
-    >Descrição:</label>
-    <input
-      type="text"
-      class="form-control"
-      id="desciptionInput"
-      name="description"
-    />
-  </div>
-  <div class="form-group">
-    <label
-      for="statusInput"
-      style="display: flex; width: 100%; align-items:start"
-    >Status:</label>
-    <input type="text" class="form-control" id="statusInput" name="status" />
-  </div>
-  <div class="form-group">
-    <label
-      for="categoryInput"
-      style="display: flex; width: 100%; align-items:start"
-    >Categoria:</label>
-    <select>
-      {{#each categories}}
-        <option>{{name}}</option>
-      {{/each}}
-    </select>
-    <input
-      type="select"
-      class="form-control"
-      id="categoryInput"
-      name="category_id"
-    />
-  </div>
-  <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <div class="form-group">
+        <label
+            for="titleInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Titulo:</label>
+        <input type="text" class="form-control" id="titleInput" name="title" />
+    </div>
+    <div class="form-group">
+        <label
+            for="descriptionInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Descrição:</label>
+        <input
+            type="text"
+            class="form-control"
+            id="descriptionInput"
+            name="description"
+        />
+    </div>
+    <div class="form-group">
+        <label
+            for="categoryInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Categoria:</label>
+        <select class="form-select" id="categoryInput" name="category_id">
+            {{#each categories}}
+                <option value={{id}}>{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
 </form>

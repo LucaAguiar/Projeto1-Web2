@@ -1,28 +1,22 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">Login</th>
             <th scope="col">Nome</th>
-            <th scope="col">Senha</th>
-            <th scope="col">Tipo</th>
             <th scope="col">Editar</th>
             <th scope="col">Deletar</th>
         </tr>
     </thead>
     <tbody>
-        {{#each users}}
+        {{#each categories}}
             <tr>
-                <th scope="row">{{login}}</th>
-                <td>{{name}}</td>
-                <td>{{password}}</td>
-                <td>{{type}}</td>
+                <th scope="row">{{name}}</th>
                 <td><a
                         class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                        href="userUpdate/{{id}}"
+                        href="categoryUpdate/{{id}}"
                     >Editar</a></td>
                 <td><a
                         class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                        href="userDelete/{{id}}"
+                        href="categoryDelete/{{id}}"
                     >Deletar</a></td>
             </tr>
         {{/each}}

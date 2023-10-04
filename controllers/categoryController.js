@@ -4,7 +4,7 @@ module.exports = {
     async getAll(req, res) {
         db.Category.findAll()
             .then((categories) => {
-                res.render("categoryViews/categoryListView", {
+                res.render("categoryViews/categoriesListView", {
                     categories: categories.map((category) => category.toJSON()),
                 });
             })
