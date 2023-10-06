@@ -19,7 +19,7 @@ module.exports = {
     },
 
     async getTicketCreate(req, res) {
-        const cats = db.Category.findAll().then((cat) => {
+        db.Category.findAll().then((cat) => {
             res.render("ticketViews/ticketCreateView", {
                 categories: cat.map((c) => c.toJSON()),
             });
@@ -40,6 +40,26 @@ module.exports = {
             })
             .catch((err) => {
                 res.status(500).json(err);
+            });
+    },
+
+    async getTicketUpdate(req, res) {
+        await db.User.findByPk(req.params.id)
+            .then((ticket) =>
+                res.render("ticketViews/ticketUpdateView", {
+                    ticket: ticket.dataValues,
+                })
+            )
+            .catch(function (err) {
+                console.log(err);
+            });
+    },
+
+    async postTicketUpdate(req, res) {
+        await db.Ticket.update(req.body, { where: { id: req.body.id } })
+            .then(res.render("userViews/homeView"))
+            .catch(function (err) {
+                console.log(err);
             });
     },
 };

@@ -25,10 +25,17 @@
             style="display: flex; width: 100%; align-items:start"
         >Status:</label>
         <select class="form-select" value="{{ticket.status}}">
-            <option>Não resolvido</option>
-            <option>Capturado</option>
-            <option>Concluído</option>
+            <option value="Não resolvido">Não resolvido</option>
+            <option value="Capturado">Capturado</option>
+            <option value="Concluido">Concluído</option>
         </select>
+    </div>
+    <div class="form-group">
+        <label
+            for="categoryInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Técnico:</label>
+        <input class="form-control" type="number" min="1" />
     </div>
     <br />
     <button type="submit" class="btn btn-primary">Atualizar</button>
