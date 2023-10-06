@@ -45,11 +45,10 @@ module.exports = {
 
   async getTicketUpdate(req, res) {
     const tecnicos = await db.User.findAll();
-    console.log(tecnicos);
-    await db.User.findByPk(req.params.id)
+    await db.Ticket.findByPk(req.params.id)
       .then((ticket) =>
         res.render("ticketViews/ticketUpdateView", {
-          ticket: ticket,
+          ticket: ticket.dataValues,
           tecs: tecnicos
             .filter((e) => e.dataValues.type == "tecnico")
             .map((e) => e.dataValues),
@@ -61,7 +60,28 @@ module.exports = {
   },
 
   async postTicketUpdate(req, res) {
-    await db.Ticket.update(req.body, { where: { id: req.body.id } })
+    const {
+      id,
+      title,
+      description,
+      category_id,
+      observation,
+      status,
+      technician_id,
+    } = req.body;
+    console.log("id: ", id);
+    await db.Ticket.update(
+      {
+        id,
+        title,
+        description,
+        category_id,
+        observation,
+        status,
+        technician_id,
+      },
+      { where: { id: id } }
+    )
       .then(res.render("userViews/homeView"))
       .catch(function (err) {
         console.log(err);

@@ -24,7 +24,7 @@
       for="categoryInput"
       style="display: flex; width: 100%; align-items:start"
     >Status:</label>
-    <select class="form-select" value="{{ticket.status}}">
+    <select class="form-select" value="{{ticket.status}}" name="status">
       <option value="Não resolvido">Não resolvido</option>
       <option value="Capturado">Capturado</option>
       <option value="Concluido">Concluído</option>
@@ -35,7 +35,7 @@
       for="categoryInput"
       style="display: flex; width: 100%; align-items:start"
     >Técnico:</label>
-    <select class="form-control">
+    <select class="form-control" name="technician_id">
       {{#each tecs}}
         <option value={{id}}>{{name}}</option>
       {{/each}}
