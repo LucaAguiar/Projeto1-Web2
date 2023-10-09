@@ -2,22 +2,30 @@
     <thead>
         <tr>
             <th scope="col">Nome</th>
+            {{#if tec}}
+
             <th scope="col">Editar</th>
             <th scope="col">Deletar</th>
+
+            {{/if}}
+
         </tr>
     </thead>
     <tbody>
         {{#each categories}}
             <tr>
                 <th scope="row">{{name}}</th>
-                <td><a
-                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                        href="categoryUpdate/{{id}}"
-                    >Editar</a></td>
-                <td><a
-                        class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                        href="categoryDelete/{{id}}"
-                    >Deletar</a></td>
+
+                {{#if ../tec}}
+                    <td><a
+                            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                            href="categoryUpdate/{{id}}"
+                        >Editar</a></td>
+                    <td><a
+                            class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                            href="categoryDelete/{{id}}"
+                        >Deletar</a></td>
+                {{/if}}
             </tr>
         {{/each}}
     </tbody>

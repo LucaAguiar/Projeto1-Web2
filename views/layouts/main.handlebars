@@ -30,16 +30,21 @@
                 <button class="btn btn-primary">Listar tickets</button>
             </a>
 
-            <a href="/getUsers">
-                <button class="btn btn-primary"> Listar usuários</button>
-            </a>
+            {{#if admin}}
+                <a href="/adminUserCreate">
+                    <button class="btn btn-primary">Cadastrar usuário</button>
+                </a>
 
+                <a href="/getUsers">
+                    <button class="btn btn-primary"> Listar usuários</button>
+                </a>
+            {{/if}}
             <a href="/categoryCreate">
-                <button class="btn btn-primary"> Cadastrar Categorias</button>
+                <button class="btn btn-primary"> Cadastrar categoria</button>
             </a>
 
             <a href="/getCategories">
-                <button class="btn btn-primary"> Listar Categorias</button>
+                <button class="btn btn-primary"> Listar categorias</button>
             </a>
 
             <a href="/logout">

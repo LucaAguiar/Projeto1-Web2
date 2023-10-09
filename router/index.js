@@ -30,6 +30,8 @@ route.get("/logout", userController.getLogout);
 route.get("/getUsers", userController.getAll);
 route.get("/userCreate", userController.getUserCreate);
 route.post("/userCreate", userController.postUserCreate);
+route.get("/adminUserCreate", userController.getAdminUserCreate);
+route.post("/adminUserCreate", userController.postAdminUserCreate);
 route.get("/userUpdate/:id", userController.getUserUpdate);
 route.post("/userUpdate", userController.postUserUpdate);
 route.get("/userDelete/:id", userController.getUserDelete);

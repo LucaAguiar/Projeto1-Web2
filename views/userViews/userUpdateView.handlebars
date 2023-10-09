@@ -3,13 +3,14 @@
     method="POST"
     style="display: flex; flex-direction: column; max-width: 350px"
 >
-    <input type="hidden" name="id" value={{user.id}} />
+    <input autocomplete="off" type="hidden" name="id" value={{user.id}} />
     <div class="form-group">
         <label
             for="loginInput"
             style="display: flex; width: 100%; align-items:start"
         >Login:</label>
         <input
+            autocomplete="off"
             type="text"
             class="form-control"
             id="loginInput"
@@ -23,6 +24,7 @@
             style="display: flex; width: 100%; align-items:start"
         >Senha:</label>
         <input
+            autocomplete="off"
             type="password"
             class="form-control"
             id="passwordIput"
@@ -36,6 +38,7 @@
             style="display: flex; width: 100%; align-items:start"
         >Nome:</label>
         <input
+            autocomplete="off"
             type="text"
             class="form-control"
             id="nameInput"
@@ -49,6 +52,7 @@
             style="display: flex; width: 100%; align-items:start"
         >Tipo:</label>
         <input
+            autocomplete="off"
             type="text"
             class="form-control"
             id="typeInput"

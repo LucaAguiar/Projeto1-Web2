@@ -4,12 +4,18 @@
     method="POST"
 >
     <div class="form-group">
-        <input type="hidden" name="id" value={{category.id}} />
+        <input
+            autocomplete="off"
+            type="hidden"
+            name="id"
+            value={{category.id}}
+        />
         <label
             for="nameInput"
             style="display: flex; width: 100%; align-items:start"
         >Nome: </label>
         <input
+            autocomplete="off"
             type="text"
             class="form-control"
             id="nameInput"

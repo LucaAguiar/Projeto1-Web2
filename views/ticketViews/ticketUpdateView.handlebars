@@ -1,46 +1,49 @@
 <form
-  action="/ticketUpdate"
-  method="POST"
-  style="display: flex; flex-direction: column; max-width: 350px"
+    action="/ticketUpdate"
+    method="POST"
+    style="display: flex; flex-direction: column; max-width: 350px"
 >
 
-  <input type="hidden" name="id" value={{ticket.id}} />
+    <input autocomplete="off" type="hidden" name="id" value={{ticket.id}} />
 
-  <div class="form-group">
-    <label
-      for="observationInput"
-      style="display: flex; width: 100%; align-items:start"
-    >Observação:</label>
-    <input
-      type="text"
-      class="form-control"
-      id="observationInput"
-      name="observation"
-      value="{{ticket.observation}}"
-    />
-  </div>
-  <div class="form-group">
-    <label
-      for="categoryInput"
-      style="display: flex; width: 100%; align-items:start"
-    >Status:</label>
-    <select class="form-select" value="{{ticket.status}}" name="status">
-      <option value="Não resolvido">Não resolvido</option>
-      <option value="Capturado">Capturado</option>
-      <option value="Concluido">Concluído</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label
-      for="categoryInput"
-      style="display: flex; width: 100%; align-items:start"
-    >Técnico:</label>
-    <select class="form-control" name="technician_id">
-      {{#each tecs}}
-        <option value={{id}}>{{name}}</option>
-      {{/each}}
-    </select>
-  </div>
-  <br />
-  <button type="submit" class="btn btn-primary">Atualizar</button>
+    <div class="form-group">
+        <label
+            for="observationInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Observação:</label>
+        <input
+            autocomplete="off"
+            type="text"
+            class="form-control"
+            id="observationInput"
+            name="observation"
+            value="{{ticket.observation}}"
+        />
+    </div>
+    <div class="form-group">
+        <label
+            for="categoryInput"
+            style="display: flex; width: 100%; align-items:start"
+        >Status:</label>
+        <select class="form-select" value="{{ticket.status}}" name="status">
+            <option value="Não resolvido">Não resolvido</option>
+            <option value="Capturado">Capturado</option>
+            <option value="Concluido">Concluído</option>
+        </select>
+    </div>
+    {{#if admin}}
+        <div class="form-group">
+            <label
+                for="categoryInput"
+                style="display: flex; width: 100%; align-items:start"
+            >Técnico:</label>
+            <select class="form-control" name="technician_id">
+                {{#each tecs}}
+                    <option value={{id}}>{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+    {{/if}}
+    <br />
+    <button type="submit" class="btn btn-primary">Atualizar</button>
 </form>
