@@ -42,7 +42,7 @@ route.post("/ticketCreate", ticketController.postTicketCreate);
 route.get("/ticketUpdate/:id", ticketController.getTicketUpdate);
 route.post("/ticketUpdate", ticketController.postTicketUpdate);
 route.get("/getTickets", ticketController.getAll);
-route.delete("/ticket/delete", ticketController.delete);
+route.get("/ticketDelete/:id", ticketController.getTicketDelete);
 
 // Category
 route.get("/categoryCreate", categoryController.getCategoryCreate);
